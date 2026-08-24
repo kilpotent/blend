@@ -1,0 +1,104 @@
+.menuSection {
+  margin: 8rem 0;
+  position: relative;
+}
+
+.menuHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.menuTitle {
+  font-family: "Network";
+  font-size: 5rem;
+  color: var(--prasino);
+  text-align: center;
+}
+
+.underlineIcon {
+  width: 30rem;
+  height: auto;
+  margin: -1.2rem auto;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menuImage {
+  height: 40vh;
+  width: auto;
+}
+
+.decorIcon {
+  position: absolute;
+  width: 8%;
+  height: auto;
+}
+
+.croissant {
+  bottom: 23rem;
+  right: 32rem;
+  width: auto;
+  height: 80px;
+}
+
+.cup {
+  top: 35rem;
+  left: 26rem;
+  width: auto;
+  height: 60px;
+}
+
+.coffee {
+  top: 11rem;
+  left: 25rem;
+  width: auto;
+  height: 90px;
+}
+
+.baguette {
+  width: auto;
+  height: 100px;
+  top: 33rem;
+  right: 45rem;
+}
+
+@media (max-width: 767.98px) {
+  .menuSection {
+    margin: 4rem 0;
+    padding: 0 1.5rem;
+  }
+
+  .decorIcon {
+    display: none; /* κρύβονται προσωρινά σε mobile — βλ. εξήγηση παραπάνω */
+  }
+
+  .menuTitle {
+    font-size: 2.5rem;
+  }
+
+  .underlineIcon {
+    width: 14rem;
+  }
+
+  .menuHeader {
+    margin-bottom: 2rem;
+  }
+
+  .menuItem {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .menuImage {
+    height: auto;
+    width: 100%;
+  }
+}

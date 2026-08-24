@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Gothic";
+  src: url("./assets/fonts/GOTHIC.TTF");
+}
+
+@font-face {
+  font-family: "GothicItalic";
+  src: url("./assets/fonts/GOTHICI.TTF");
+}
+
+@font-face {
+  font-family: "Network";
+  src: url("./assets/fonts/NETWORKFREEVERSION.TTF");
+}
+
+:root {
+  --fistiki: #bdcabc;
+  --prasino: #3f6148;
+  --bg: #f2f2f2;
+}
+
+body {
+  background-color: var(--bg);
+  margin: 0;
+  overflow-x: hidden;
+}

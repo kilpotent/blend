@@ -1,0 +1,52 @@
+.aboutSection {
+  text-align: center;
+  justify-content: center;
+  border: 1px solid var(--prasino);
+  padding: 2rem;
+  background-color: var(--prasino);
+  border-radius: 20rem 20rem 0 0;
+  color: var(--fistiki);
+}
+
+.aboutHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Network";
+}
+
+.aboutTitle {
+  padding: 0;
+  font-size: 5rem;
+  margin: 1.8rem;
+  position: relative; /* σημείο αναφοράς — ΤΟ ΙΔΙΟ το h1, κανένα extra div */
+  display: inline-block;
+}
+
+.aboutText {
+  white-space: pre-line;
+  font-family: "Gothic";
+  font-size: 1.5rem;
+}
+
+.kokoiIcon {
+  position: absolute;
+  width: auto;
+  height: 3rem;
+  top: 0;
+  right: 38%;
+}
+
+.aboutLogo {
+  width: auto;
+  height: 5rem;
+  margin: 2rem;
+  flex-shrink: 0;
+}
+
+.aboutFooter {
+  font-family: "GothicItalic";
+}

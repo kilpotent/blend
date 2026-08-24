@@ -1,0 +1,69 @@
+.hero {
+  margin: 3.9rem 3.2rem;
+  position: relative;
+}
+
+.heroImage {
+  width: auto;
+  height: 83vh;
+}
+
+.heroWrapper {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+.heroIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 5%;
+  right: 3.5%;
+}
+
+.heroArrow {
+  margin-right: 3rem;
+  height: auto;
+  width: 30px;
+}
+
+.heroSpot {
+  height: auto;
+  width: 300px;
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    margin: 1.5rem 1rem;
+  }
+
+  .heroWrapper {
+    height: 65dvh;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .heroIcon {
+    bottom: 3%;
+    right: 4%;
+  }
+
+  .heroArrow {
+    width: 18px;
+    margin-right: 1.2rem;
+  }
+
+  .heroSpot {
+    width: 55%; /* ΝΕΟ: αναλογικό στο πλάτος του γονέα, όχι σταθερό 300px */
+    max-width: 220px; /* όριο ώστε να μη γίνει υπερβολικά μεγάλο σε tablet-size mobile */
+  }
+}
