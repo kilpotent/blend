@@ -50,3 +50,35 @@
 .aboutFooter {
   font-family: "GothicItalic";
 }
+@media (max-width: 767.98px) {
+  .aboutSection {
+    padding: 0.5rem 1rem;
+    border-radius: 8rem 8rem 0 0;
+  }
+
+  .aboutHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .aboutTitle {
+    font-size: 2.5rem;
+    margin: 0.8rem;
+  }
+
+  .aboutText {
+    font-size: 1.1rem;
+  }
+
+  .aboutLogo {
+    height: 3rem;
+    margin: 1rem;
+  }
+
+  .kokoiIcon {
+    width: auto;
+    height: 1.5rem;
+    top: 10%;
+    right: 15%;
+  }
+}

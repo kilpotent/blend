@@ -4,6 +4,7 @@
   margin: 0.9rem 3.3rem;
   border-radius: 23px;
   position: relative;
+  z-index: 1000;
 }
 
 .navContainer {
@@ -46,6 +47,65 @@
 
 .navLink:hover {
   opacity: 0.7;
+}
+
+/* ── BURGER ─────────────────────────────────── */
+.toggler {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none;
+  padding: 0;
+  width: 34px;
+  height: 26px;
+  position: relative;
+  background: transparent;
+}
+
+.toggler:focus-visible {
+  outline: 2px solid var(--prasino);
+  outline-offset: 4px;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--prasino);
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease;
+}
+
+.bar:nth-child(1) {
+  top: 2px;
+}
+.bar:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.bar:nth-child(3) {
+  bottom: 2px;
+}
+
+/* ── ΑΝΟΙΧΤΟ: γίνεται Χ ──────────────────────── */
+.toggler[aria-expanded="true"] .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.toggler[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.toggler[aria-expanded="true"] .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
 }
 
 @media (max-width: 991.98px) {

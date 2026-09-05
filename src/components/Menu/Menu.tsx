@@ -9,7 +9,7 @@ import croissant from "../../assets/icons/krouasan.png";
 
 function Menu() {
   return (
-    <div className={styles.menuSection}>
+    <div className={styles.menuSection} id="menu">
       <img
         src={coffee}
         alt=""

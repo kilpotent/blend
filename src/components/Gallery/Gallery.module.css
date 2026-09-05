@@ -18,6 +18,7 @@
   }
 
   .galleryImage {
-    height: 45vh;
+    height: auto;
+    width: 100%;
   }
 }

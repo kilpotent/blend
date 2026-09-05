@@ -1,30 +1,150 @@
 .visitSection {
-  padding: 4rem 6.3rem;
+  margin-top: 220px;
+}
+
+.visitTitle {
+  font-family: "Network";
+  font-size: 5rem;
+  text-align: center;
+  color: var(--prasino);
+  margin-bottom: 1rem;
+}
+
+.visitWrapper {
+  /* ── ΤΑ ΚΟΥΜΠΙΑ ΡΥΘΜΙΣΗΣ ─────────────────────── */
+  --gutter: 16%; /* κενό από αριστερό/δεξί άκρο */
+  --img-w: 37%; /* πλάτος εικόνας */
+  --img-h: 55%; /* ύψος εικόνας */
+  --map-w: 36%; /* πλάτος χάρτη */
+  --map-h: 76%; /* ύψος χάρτη */
+  --slide: 80px; /* απόσταση εισόδου του animation */
+  /* overlap = img-w + map-w + (2 × gutter) − 100%
+     Τώρα: 44 + 36 + 28 − 100 = 8% επικάλυψη      */
+
+  display: grid;
+  aspect-ratio: 16 / 9;
+  padding: 1rem 0; /* μόνο κάθετο — το οριζόντιο το κάνει το gutter */
+  background-image: url("../../assets/images/visit-background.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Όλα τα παιδιά στοιβάζονται στο ΙΔΙΟ κελί */
+.visitWrapper > * {
+  grid-area: 1 / 1;
+  min-width: 0; /* χωρίς αυτό αρνούνται να μικρύνουν */
+  min-height: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: var(--img-w);
+  height: auto;
+  justify-self: start; /* κολλάει αριστερά */
+  align-self: center;
+  margin-left: var(--gutter);
+  z-index: 2;
+}
+
+.visitIcon {
+  position: absolute;
+  top: 100%;
+  left: -20%;
+  width: 60%;
+  height: auto;
+  z-index: 3;
+}
+
+.visitImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .mapWrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 20px;
+  width: var(--map-w);
+  height: var(--map-h);
+  justify-self: end; /* κολλάει δεξιά */
+  align-self: center;
+  margin-right: var(--gutter);
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 1;
 }
 
 .mapFrame {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  border: 0;
+}
+
+/* ── ANIMATION: αρχική κατάσταση ─────────────── */
+.imageWrapper,
+.mapWrapper {
+  opacity: 0;
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.7s ease-out;
+}
+
+.imageWrapper {
+  transform: translateX(calc(var(--slide) * -1)); /* ξεκινάει αριστερά */
+}
+
+.mapWrapper {
+  transform: translateX(var(--slide)); /* ξεκινάει δεξιά */
+  transition-delay: 0.45s; /* μπαίνει λίγο μετά την εικόνα */
+}
+
+/* ── ANIMATION: τελική κατάσταση ─────────────── */
+.imageWrapper.visible,
+.mapWrapper.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Σεβασμός σε όσους έχουν κλείσει τις κινήσεις */
+@media (prefers-reduced-motion: reduce) {
+  .imageWrapper,
+  .mapWrapper {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
 }
 
 @media (max-width: 767.98px) {
-  .visitSection {
-    padding: 2rem 1.5rem;
+  .visitWrapper {
+    --gutter: 0%;
+    --img-w: 84%;
+    --map-w: 52%;
+    --map-h: 46%;
+    --slide: 24px; /* πολύ μικρότερο — λίγος χώρος στο πλάι */
+
+    aspect-ratio: 3 / 4;
+    padding: 2rem 0;
+  }
+
+  .visitTitle {
+    font-size: 2.5rem;
+  }
+
+  .visitIcon {
+    display: none;
+  }
+
+  .imageWrapper {
+    justify-self: center;
+    align-self: start;
+    margin-left: 0;
+    margin-top: var(--gutter);
   }
 
   .mapWrapper {
-    aspect-ratio: 4 / 3;
+    justify-self: center;
+    align-self: end;
+    margin-left: 0;
+    margin-bottom: var(--gutter);
   }
 }

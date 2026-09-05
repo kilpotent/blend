@@ -20,7 +20,7 @@ function Navbar() {
 
         <div className={styles.actions}>
           <button
-            className="navbar-toggler"
+            className={`navbar-toggler ${styles.toggler}`}
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navMenu"
@@ -28,7 +28,9 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
           </button>
 
           <div
@@ -37,17 +39,32 @@ function Navbar() {
           >
             <ul className={`navbar-nav ${styles.navList}`}>
               <li className="nav-item">
-                <a className={`nav-link ${styles.navLink}`} href="#about">
+                <a
+                  className={`nav-link ${styles.navLink}`}
+                  href="#about"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navMenu"
+                >
                   Our Story
                 </a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link ${styles.navLink}`} href="#menu">
+                <a
+                  className={`nav-link ${styles.navLink}`}
+                  href="#menu"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navMenu"
+                >
                   Our Menu
                 </a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link ${styles.navLink}`} href="#visit">
+                <a
+                  className={`nav-link ${styles.navLink}`}
+                  href="#visit"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navMenu"
+                >
                   Visit Us
                 </a>
               </li>

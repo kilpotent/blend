@@ -43,27 +43,26 @@
   }
 
   .heroWrapper {
-    height: 65dvh;
+    height: auto; /* ← το ύψος το δίνει η εικόνα */
   }
 
   .heroImage {
     width: 100%;
-    height: auto;
-    max-width: 100%;
+    height: auto; /* ← διατηρεί τις αναλογίες της */
   }
 
   .heroIcon {
-    bottom: 3%;
-    right: 4%;
+    position: static; /* ← μπαίνει στη ροή, κάτω από την εικόνα */
+    margin-top: 0.5rem;
   }
 
   .heroArrow {
-    width: 18px;
+    width: 10px;
     margin-right: 1.2rem;
   }
 
   .heroSpot {
-    width: 55%; /* ΝΕΟ: αναλογικό στο πλάτος του γονέα, όχι σταθερό 300px */
-    max-width: 220px; /* όριο ώστε να μη γίνει υπερβολικά μεγάλο σε tablet-size mobile */
+    width: 45%;
+    max-width: 220px;
   }
 }

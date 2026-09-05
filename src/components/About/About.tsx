@@ -4,7 +4,7 @@ import kokoi from "../../assets/icons/kokoi.png";
 
 function About() {
   return (
-    <section className={styles.aboutSection}>
+    <section className={styles.aboutSection} id="about">
       <div className={styles.aboutContent}>
         <div className={styles.aboutHeader}>
           <h1 className={styles.aboutTitle}>Our Story</h1>
