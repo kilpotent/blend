@@ -36,6 +36,11 @@
     grid-template-columns: 1fr;
   }
 
+  .coffeeIcon,
+  .cupIcon {
+    display: none;
+  }
+
   .galleryImage {
     height: auto;
     width: 100%;

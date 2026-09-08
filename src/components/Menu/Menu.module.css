@@ -58,3 +58,57 @@
   height: 650px; /* λίγο μεγαλύτερη */
   transform: translateY(-45px); /* λίγο πιο σηκωμένη */
 }
+
+/* ── Tablet ──────────────────────────── */
+@media (max-width: 991.98px) {
+  .menuSection {
+    border-radius: 20rem 20rem 0 0;
+  }
+
+  .menuTitle {
+    font-size: 4rem;
+  }
+
+  .drinkMenu {
+    height: 440px;
+  }
+
+  .foodMenu {
+    height: 470px;
+    transform: translateY(-25px);
+  }
+}
+
+/* ── Κινητά ──────────────────────────── */
+@media (max-width: 767.98px) {
+  .menuSection {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-radius: 10rem 10rem 0 0;
+  }
+
+  .menuTitle {
+    font-size: 2.5rem;
+  }
+
+  .menuSubtitle {
+    font-size: 1rem;
+  }
+
+  .menuContent {
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 30px 1rem 60px;
+  }
+
+  .menuImage {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+  }
+
+  .foodMenu {
+    transform: rotate(-11deg);
+    max-width: 390px;
+  }
+}

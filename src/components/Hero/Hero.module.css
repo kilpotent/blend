@@ -18,11 +18,6 @@
 }
 
 @media (max-width: 767.98px) {
-  .hero {
-    height: 88svh;
-    min-height: 420px;
-  }
-
   .heroImage {
     object-position: center 40%; /* κρατάει τα ποτήρια στο κάδρο */
   }
