@@ -1,6 +1,6 @@
 import styles from "./About.module.css";
-import logo from "../../assets/logos/logo-leuko.png";
-import kokoi from "../../assets/icons/kokoi.png";
+import logo from "../../assets/logos/mascot-dark.png";
+import kokoi from "../../assets/icons/kokoi-icon.png";
 
 function About() {
   return (

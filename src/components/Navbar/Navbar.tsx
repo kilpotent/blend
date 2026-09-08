@@ -1,25 +1,35 @@
-import mascotIcon from "../../assets/logos/logo-prasino.png";
-import blendLogo from "../../assets/logos/logo-blend.png";
+import { useRef } from "react";
+import blendLogo from "../../assets/logos/logo-dark.png";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
+  const togglerRef = useRef<HTMLButtonElement>(null);
+
+  const closeMenu = () => {
+    const btn = togglerRef.current;
+    if (btn && btn.getAttribute("aria-expanded") === "true") {
+      btn.click();
+    }
+  };
+
   return (
     <nav className={`navbar navbar-expand-lg ${styles.navbar}`}>
       <div className={styles.navContainer}>
-        <a href="#home" className={styles.iconLink}>
-          <img src={mascotIcon} alt="Blend" className={styles.icon} />
-        </a>
-
-        <a href="#home" className={styles.brandLink}>
-          <img
-            src={blendLogo}
-            alt="Blend - Street Espresso"
-            className={styles.logo}
-          />
-        </a>
+        <div className={styles.brandGroup}>
+          {" "}
+          <a href="#home" className={styles.iconLink}></a>
+          <a href="#home" className={styles.brandLink}>
+            <img
+              src={blendLogo}
+              alt="Blend - Street Espresso"
+              className={styles.logo}
+            />
+          </a>
+        </div>
 
         <div className={styles.actions}>
           <button
+            ref={togglerRef}
             className={`navbar-toggler ${styles.toggler}`}
             type="button"
             data-bs-toggle="collapse"
@@ -42,8 +52,7 @@ function Navbar() {
                 <a
                   className={`nav-link ${styles.navLink}`}
                   href="#about"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navMenu"
+                  onClick={closeMenu}
                 >
                   Our Story
                 </a>
@@ -52,8 +61,7 @@ function Navbar() {
                 <a
                   className={`nav-link ${styles.navLink}`}
                   href="#menu"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navMenu"
+                  onClick={closeMenu}
                 >
                   Our Menu
                 </a>
@@ -62,8 +70,7 @@ function Navbar() {
                 <a
                   className={`nav-link ${styles.navLink}`}
                   href="#visit"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navMenu"
+                  onClick={closeMenu}
                 >
                   Visit Us
                 </a>

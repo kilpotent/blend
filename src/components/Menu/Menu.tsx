@@ -1,46 +1,27 @@
 import styles from "./Menu.module.css";
-import menuFood from "../../assets/images/menu-fagita.png";
-import menuDrink from "../../assets/images/menu-kafedes.png";
-import underlineIcon from "../../assets/icons/curved-line.png";
-import coffee from "../../assets/icons/potiri.png";
-import baguette from "../../assets/icons/mpagketa.png";
-import cup from "../../assets/icons/koupa.png";
-import croissant from "../../assets/icons/krouasan.png";
+import foodMenu from "../../assets/images/menu-fagita.png";
+import drinkMenu from "../../assets/images/menu-kafedes.png";
 
 function Menu() {
   return (
-    <div className={styles.menuSection} id="menu">
-      <img
-        src={coffee}
-        alt=""
-        className={` ${styles.coffee} ${styles.decorIcon}`}
-      />
-      <img
-        src={baguette}
-        alt=""
-        className={`${styles.baguette} ${styles.decorIcon}`}
-      />
-      <img src={cup} alt="" className={`${styles.cup} ${styles.decorIcon}`} />
-      <img
-        src={croissant}
-        alt=""
-        className={`${styles.croissant} ${styles.decorIcon}`}
-      />
-
+    <section className={styles.menuSection} id="menu">
       <div className={styles.menuHeader}>
-        <h1 className={styles.menuTitle}>QUicK PicKs</h1>
+        <h2 className={styles.menuTitle}>Our Menu</h2>
+        <h5 className={styles.menuSubtitle}>[Grab, Sip, Go] </h5>
+      </div>
+      <div className={styles.menuContent}>
         <img
-          src={underlineIcon}
-          alt="Underline Icon"
-          className={styles.underlineIcon}
+          src={drinkMenu}
+          alt="Drink Menu"
+          className={`${styles.menuImage} ${styles.drinkMenu}`}
+        />
+        <img
+          src={foodMenu}
+          alt="Food Menu"
+          className={`${styles.menuImage} ${styles.foodMenu}`}
         />
       </div>
-
-      <div className={styles.menuItem}>
-        <img src={menuDrink} alt="Menu Drink" className={styles.menuImage} />
-        <img src={menuFood} alt="Menu Food" className={styles.menuImage} />
-      </div>
-    </div>
+    </section>
   );
 }
 

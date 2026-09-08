@@ -1,104 +1,60 @@
 .menuSection {
-  margin: 8rem 0;
-  position: relative;
+  margin-top: 60px;
+  padding-top: 60px;
+  color: var(--fistiki);
+  border: 1px solid var(--prasino);
+  background-color: var(--prasino);
+  border-radius: 35rem 35rem 0 0;
 }
 
 .menuHeader {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
+  justify-content: center;
+  padding-top: 1rem;
+  gap: 0;
+  margin-bottom: 1rem;
+  font-family: "Network";
 }
 
 .menuTitle {
-  font-family: "Network";
+  padding: 0;
   font-size: 5rem;
-  color: var(--prasino);
-  text-align: center;
+  margin: 0.2rem;
+  position: relative; /* σημείο αναφοράς — ΤΟ ΙΔΙΟ το h1, κανένα extra div */
+  display: inline-block;
 }
 
-.underlineIcon {
-  width: 30rem;
-  height: auto;
-  margin: -1.2rem auto;
+.menuSubtitle {
+  font-family: "Gothic";
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-.menuItem {
+.menuContent {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  justify-content: center; /* ← το κεντράρισμα γίνεται εδώ */
+  gap: 1.5rem; /* ← τώρα ελέγχει πραγματικά την απόσταση */
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 50px 1rem 100px;
 }
 
 .menuImage {
-  height: 40vh;
+  display: block;
   width: auto;
+  flex-shrink: 0; /* εξηγώ πιο κάτω */
+  /* ΣΒΗΣΕ το margin: 0 auto */
 }
 
-.decorIcon {
-  position: absolute;
-  width: 8%;
-  height: auto;
+.drinkMenu {
+  height: 620px;
 }
 
-.croissant {
-  bottom: 23rem;
-  right: 32rem;
-  width: auto;
-  height: 80px;
-}
-
-.cup {
-  top: 35rem;
-  left: 26rem;
-  width: auto;
-  height: 60px;
-}
-
-.coffee {
-  top: 11rem;
-  left: 25rem;
-  width: auto;
-  height: 90px;
-}
-
-.baguette {
-  width: auto;
-  height: 100px;
-  top: 33rem;
-  right: 45rem;
-}
-
-@media (max-width: 767.98px) {
-  .menuSection {
-    margin: 5rem 0;
-    padding: 0 1.5rem;
-  }
-
-  .decorIcon {
-    display: none; /* κρύβονται προσωρινά σε mobile — βλ. εξήγηση παραπάνω */
-  }
-
-  .menuTitle {
-    font-size: 2.5rem;
-  }
-
-  .underlineIcon {
-    width: 14rem;
-  }
-
-  .menuHeader {
-    margin-bottom: 2rem;
-  }
-
-  .menuItem {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .menuImage {
-    height: auto;
-    width: 100%;
-  }
+.foodMenu {
+  height: 650px; /* λίγο μεγαλύτερη */
+  transform: translateY(-45px); /* λίγο πιο σηκωμένη */
 }

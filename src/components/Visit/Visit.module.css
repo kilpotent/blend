@@ -1,5 +1,5 @@
 .visitSection {
-  margin-top: 220px;
+  margin: 120px 0;
 }
 
 .visitTitle {
@@ -10,101 +10,74 @@
   margin-bottom: 1rem;
 }
 
+.visitSubtitle {
+  font-family: "Gothic";
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--prasino);
+  margin-bottom: 3rem;
+}
+
 .visitWrapper {
-  /* ── ΤΑ ΚΟΥΜΠΙΑ ΡΥΘΜΙΣΗΣ ─────────────────────── */
-  --gutter: 16%; /* κενό από αριστερό/δεξί άκρο */
-  --img-w: 37%; /* πλάτος εικόνας */
-  --img-h: 55%; /* ύψος εικόνας */
-  --map-w: 36%; /* πλάτος χάρτη */
-  --map-h: 76%; /* ύψος χάρτη */
-  --slide: 80px; /* απόσταση εισόδου του animation */
-  /* overlap = img-w + map-w + (2 × gutter) − 100%
-     Τώρα: 44 + 36 + 28 − 100 = 8% επικάλυψη      */
-
-  display: grid;
-  aspect-ratio: 16 / 9;
-  padding: 1rem 0; /* μόνο κάθετο — το οριζόντιο το κάνει το gutter */
-  background-image: url("../../assets/images/visit-background.jpg");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Όλα τα παιδιά στοιβάζονται στο ΙΔΙΟ κελί */
-.visitWrapper > * {
-  grid-area: 1 / 1;
-  min-width: 0; /* χωρίς αυτό αρνούνται να μικρύνουν */
-  min-height: 0;
-}
-
-.imageWrapper {
-  position: relative;
-  width: var(--img-w);
-  height: auto;
-  justify-self: start; /* κολλάει αριστερά */
-  align-self: center;
-  margin-left: var(--gutter);
-  z-index: 2;
-}
-
-.visitIcon {
-  position: absolute;
-  top: 100%;
-  left: -20%;
-  width: 60%;
-  height: auto;
-  z-index: 3;
-}
-
-.visitImage {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
+  display: flex;
+  justify-content: center; /* το κεντράρισμα γίνεται εδώ */
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+  max-width: 1200px;
 }
 
 .mapWrapper {
-  width: var(--map-w);
-  height: var(--map-h);
-  justify-self: end; /* κολλάει δεξιά */
-  align-self: center;
-  margin-right: var(--gutter);
-  overflow: hidden;
-  z-index: 1;
+  width: 100%;
+  max-width: 860px; /* το πλάτος που θέλεις */
+  border-radius: 20px;
+  overflow: hidden; /* απαραίτητο, εξηγώ πιο κάτω */
+  border: 1px solid var(--prasino);
+
+  /* αρχική κατάσταση του animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .mapFrame {
+  display: block; /* διώχνει το κενό των 4px */
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16/9; /* το ύψος προκύπτει από το πλάτος */
   border: 0;
 }
 
-/* ── ANIMATION: αρχική κατάσταση ─────────────── */
-.imageWrapper,
-.mapWrapper {
-  opacity: 0;
-  transition:
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.7s ease-out;
+.footerIcon {
+  font-size: 1.4rem;
+  -webkit-text-stroke: 0.4px currentColor;
 }
 
-.imageWrapper {
-  transform: translateX(calc(var(--slide) * -1)); /* ξεκινάει αριστερά */
+.visitFooter {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6rem;
+  padding-top: 5rem;
+  font-family: "Gothic";
+  color: var(--prasino);
 }
 
-.mapWrapper {
-  transform: translateX(var(--slide)); /* ξεκινάει δεξιά */
-  transition-delay: 0.45s; /* μπαίνει λίγο μετά την εικόνα */
+.footerItem {
+  display: flex;
+  flex-direction: column; /* εικονίδιο πάνω, κείμενο κάτω */
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
-/* ── ANIMATION: τελική κατάσταση ─────────────── */
-.imageWrapper.visible,
-.mapWrapper.visible {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-/* Σεβασμός σε όσους έχουν κλείσει τις κινήσεις */
 @media (prefers-reduced-motion: reduce) {
   .imageWrapper,
   .mapWrapper {
@@ -115,36 +88,7 @@
 }
 
 @media (max-width: 767.98px) {
-  .visitWrapper {
-    --gutter: 0%;
-    --img-w: 84%;
-    --map-w: 52%;
-    --map-h: 46%;
-    --slide: 24px; /* πολύ μικρότερο — λίγος χώρος στο πλάι */
-
-    aspect-ratio: 3 / 4;
-    padding: 2rem 0;
-  }
-
   .visitTitle {
     font-size: 2.5rem;
-  }
-
-  .visitIcon {
-    display: none;
-  }
-
-  .imageWrapper {
-    justify-self: center;
-    align-self: start;
-    margin-left: 0;
-    margin-top: var(--gutter);
-  }
-
-  .mapWrapper {
-    justify-self: center;
-    align-self: end;
-    margin-left: 0;
-    margin-bottom: var(--gutter);
   }
 }

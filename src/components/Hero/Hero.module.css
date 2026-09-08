@@ -1,68 +1,29 @@
 .hero {
-  margin: 3.9rem 3.2rem;
   position: relative;
-}
-
-.heroImage {
-  width: auto;
-  height: 83vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 .heroWrapper {
-  padding: 0;
-  display: flex;
-  justify-content: center;
   width: 100%;
-  height: 100vh;
-  margin: 0;
-}
-
-.heroIcon {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  position: absolute;
-  bottom: 5%;
-  right: 3.5%;
-}
-
-.heroArrow {
-  margin-right: 3rem;
   height: auto;
-  width: 30px;
 }
 
-.heroSpot {
+.heroImage {
+  display: block;
+  width: 100%;
   height: auto;
-  width: 300px;
+  object-fit: cover; /* γεμίζει χωρίς παραμόρφωση */
+  object-position: center; /* ποιο σημείο κρατάει όταν κόβει */
 }
 
 @media (max-width: 767.98px) {
   .hero {
-    margin: 1.5rem 1rem;
-  }
-
-  .heroWrapper {
-    height: auto; /* ← το ύψος το δίνει η εικόνα */
+    height: 88svh;
+    min-height: 420px;
   }
 
   .heroImage {
-    width: 100%;
-    height: auto; /* ← διατηρεί τις αναλογίες της */
-  }
-
-  .heroIcon {
-    position: static; /* ← μπαίνει στη ροή, κάτω από την εικόνα */
-    margin-top: 0.5rem;
-  }
-
-  .heroArrow {
-    width: 10px;
-    margin-right: 1.2rem;
-  }
-
-  .heroSpot {
-    width: 45%;
-    max-width: 220px;
+    object-position: center 40%; /* κρατάει τα ποτήρια στο κάδρο */
   }
 }

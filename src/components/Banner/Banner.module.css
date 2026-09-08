@@ -1,0 +1,73 @@
+.banner {
+  margin-top: 0;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url("../../assets/images/visitus-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0; /* καλύπτει όλο το section */
+}
+
+.bannerText {
+  position: relative; /* κρίσιμο — εξηγώ πιο κάτω */
+  z-index: 1;
+  font-family: "Network";
+  font-size: 3.5rem;
+  line-height: 1.4;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.highlight {
+  color: #fff;
+  text-shadow:
+    0 0 5px #a8dcc4,
+    0 0 12px #a8dcc4,
+    0 0 25px #6fbf9a,
+    0 0 45px #4a9c78;
+}
+
+@media (max-width: 767.98px) {
+  .banner {
+    min-height: 55vh;
+  }
+
+  .bannerText {
+    font-size: 1.8rem;
+    padding: 0 1.5rem;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.highlight {
+  animation: flicker 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlight {
+    animation: none;
+  }
+}

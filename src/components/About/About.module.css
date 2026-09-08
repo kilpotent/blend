@@ -1,11 +1,9 @@
 .aboutSection {
   text-align: center;
   justify-content: center;
-  border: 1px solid var(--prasino);
+  margin-top: 120px;
   padding: 2rem;
-  background-color: var(--prasino);
-  border-radius: 20rem 20rem 0 0;
-  color: var(--fistiki);
+  color: var(--prasino);
 }
 
 .aboutHeader {

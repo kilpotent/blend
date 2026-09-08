@@ -1,28 +1,21 @@
 import styles from "./Footer.module.css";
-import mascotIcon from "../../assets/logos/logo-prasino.png";
-import blendLogo from "../../assets/logos/logo-blend.png";
+import mascotIcon from "../../assets/logos/mascot-light.png";
+import blendLogo from "../../assets/logos/logo-light.png";
 
 function Footer() {
   return (
     <footer className={styles.footerSection}>
       <div className={styles.footerWrapper}>
         <div className={styles.logoWrapper}>
+          <img src={blendLogo} alt="Blend logo" className={styles.blendLogo} />
+        </div>
+
+        <div className={styles.footerTextWrapper}>
           <img
             src={mascotIcon}
             alt="Blend Mascot"
             className={styles.mascotIcon}
           />
-          <img src={blendLogo} alt="Blend logo" className={styles.blendLogo} />
-        </div>
-
-        <div className={styles.footerTextWrapper}>
-          <p className={styles.footerText}>
-            <i className={`bi bi-geo-alt ${styles.footerIcon}`}></i> Ταϋγέτου 6,
-            Λαμία
-            <br />
-            <i className={`bi bi-clock ${styles.footerIcon}`}></i> Καθημερινά
-            05:00-22:00
-          </p>
         </div>
 
         <a
