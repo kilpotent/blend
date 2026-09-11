@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import blendLogo from "../../assets/logos/logo-dark.png";
+import blendLogoMobile from "../../assets/logos/logo-mobile.png";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
@@ -19,11 +20,14 @@ function Navbar() {
           {" "}
           <a href="#home" className={styles.iconLink}></a>
           <a href="#home" className={styles.brandLink}>
-            <img
-              src={blendLogo}
-              alt="Blend - Street Espresso"
-              className={styles.logo}
-            />
+            <picture>
+              <source media="(max-width: 767.98px)" srcSet={blendLogoMobile} />
+              <img
+                src={blendLogo}
+                alt="Blend - Street Espresso"
+                className={styles.logo}
+              />
+            </picture>
           </a>
         </div>
 
@@ -47,7 +51,7 @@ function Navbar() {
             className={`collapse navbar-collapse ${styles.mobileMenu}`}
             id="navMenu"
           >
-            <ul className={`navbar-nav ${styles.navList}`}>
+            <ul className={`navbar-nav ${styles.navList} ${styles.mobileMenuInner}`}>
               <li className="nav-item">
                 <a
                   className={`nav-link ${styles.navLink}`}

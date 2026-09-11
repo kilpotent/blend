@@ -24,7 +24,7 @@
   position: relative; /* κρίσιμο — εξηγώ πιο κάτω */
   z-index: 1;
   font-family: "Network";
-  font-size: 3.5rem;
+  font-size: 5rem;
   line-height: 1.4;
   text-align: center;
   color: #fff;
@@ -47,8 +47,9 @@
   }
 
   .bannerText {
-    font-size: 1.8rem;
+    font-size: 2rem;
     padding: 0 1.5rem;
+    letter-spacing: 0;
   }
 }
 

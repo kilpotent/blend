@@ -34,7 +34,8 @@ function Visit() {
 
         <div className={styles.footerItem}>
           <i className={`bi bi-clock ${styles.footerIcon}`}></i>
-          <span>Καθημερινά 05:00-22:00</span>
+          <span>Mon. - Sat. 05:00-21:00</span>
+          <span>Sun. 07:00-21:00</span>
         </div>
 
         <div className={styles.footerItem}>

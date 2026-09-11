@@ -11,7 +11,7 @@
 }
 
 .visitSubtitle {
-  font-family: "Gothic";
+  font-family: "GothicItalic";
   font-size: 1.2rem;
   text-align: center;
   color: var(--prasino);
@@ -31,7 +31,7 @@
   max-width: 860px; /* το πλάτος που θέλεις */
   border-radius: 20px;
   overflow: hidden; /* απαραίτητο, εξηγώ πιο κάτω */
-  border: 1px solid var(--prasino);
+  border: 2.5px solid var(--prasino);
 
   /* αρχική κατάσταση του animation */
   opacity: 0;
@@ -91,12 +91,19 @@
   .visitSection {
     margin: 60px 0;
   }
+
   .visitTitle {
     font-size: 2.5rem;
   }
+
+  .visitSubtitle {
+    font-size: 1rem;
+  }
+
   .visitWrapper {
     padding: 0 1rem;
   }
+
   .mapFrame {
     aspect-ratio: 4 / 3;
   }
