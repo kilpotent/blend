@@ -57,7 +57,8 @@
 
 .foodMenu {
   height: 650px; /* λίγο μεγαλύτερη */
-  transform: rotate(-8deg) translateY(-45px); /* λίγο πιο σηκωμένη */
+  transform: rotate(8deg) translateY(-45px); /* λίγο πιο σηκωμένη */
+  padding-left: 50px;
 }
 
 /* ── Tablet ──────────────────────────── */
@@ -77,6 +78,7 @@
 
   .foodMenu {
     transform: rotate(-8deg) translateY(-25px);
+    padding: 0;
   }
 }
 

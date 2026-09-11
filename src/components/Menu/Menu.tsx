@@ -7,7 +7,7 @@ function Menu() {
     <section className={styles.menuSection} id="menu">
       <div className={styles.menuHeader}>
         <h2 className={styles.menuTitle}>Our Menu</h2>
-        <h5 className={styles.menuSubtitle}>[Grab, Sip, Go] </h5>
+        <h5 className={styles.menuSubtitle}>[Grab. Sip. Go] </h5>
       </div>
       <div className={styles.menuContent}>
         <img
