@@ -1,8 +1,17 @@
+import { useEffect, useState } from "react";
 import styles from "./Visit.module.css";
 import { useInView } from "../../hooks/useInView";
 
 function Visit() {
   const { ref, inView } = useInView<HTMLDivElement>(0.25);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <section className={styles.visitSection} id="visit">
@@ -44,7 +53,11 @@ function Visit() {
         </div>
       </div>
 
-      <a href="#home" className={styles.scrollTop} aria-label="Back to top">
+      <a
+        href="#home"
+        className={`${styles.scrollTop} ${scrolled ? styles.scrollTopVisible : ""}`}
+        aria-label="Back to top"
+      >
         <i className="bi bi-arrow-up"></i>
       </a>
     </section>
