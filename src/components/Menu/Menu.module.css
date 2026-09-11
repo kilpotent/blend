@@ -111,12 +111,13 @@
   }
 
   .drinkMenu {
+    width: calc(100% - 20px);
     margin-right: 20px;
   }
 
   .foodMenu {
     transform: none;
-    width: 400px;
+    width: calc(100% - 20px);
     margin-left: 20px;
   }
 }

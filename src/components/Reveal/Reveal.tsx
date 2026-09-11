@@ -6,10 +6,16 @@ type RevealProps = {
   children: ReactNode;
   direction?: "up" | "left" | "right";
   delay?: number;
+  threshold?: number;
 };
 
-function Reveal({ children, direction = "up", delay = 0 }: RevealProps) {
-  const { ref, inView } = useInView<HTMLDivElement>(0.2);
+function Reveal({
+  children,
+  direction = "up",
+  delay = 0,
+  threshold = 0.2,
+}: RevealProps) {
+  const { ref, inView } = useInView<HTMLDivElement>(threshold);
 
   return (
     <div

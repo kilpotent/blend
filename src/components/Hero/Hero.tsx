@@ -4,7 +4,7 @@ import heroImageMobile from "../../assets/images/hero-image-mobile.jpg";
 
 function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="home">
       <div className={styles.heroWrapper}>
         <picture>
           <source media="(max-width: 767.98px)" srcSet={heroImageMobile} />

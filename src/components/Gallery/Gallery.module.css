@@ -17,11 +17,13 @@
 .coffeeIcon {
   bottom: -3%;
   right: 31%;
+  transform: translateX(60px);
 }
 
 .cupIcon {
   top: -2%;
   left: 29%;
+  transform: translateX(-60px);
 }
 
 .icon {
@@ -29,6 +31,23 @@
   width: 120px;
   height: auto;
   z-index: 5;
+  opacity: 0;
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.iconVisible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
 }
 
 @media (max-width: 767.98px) {

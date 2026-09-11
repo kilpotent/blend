@@ -43,6 +43,10 @@ function Visit() {
           <span>22310-42200</span>
         </div>
       </div>
+
+      <a href="#home" className={styles.scrollTop} aria-label="Back to top">
+        <i className="bi bi-arrow-up"></i>
+      </a>
     </section>
   );
 }
