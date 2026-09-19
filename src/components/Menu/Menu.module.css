@@ -117,7 +117,7 @@
 
   .foodMenu {
     transform: none;
-    width: calc(100% - 20px);
+    width: calc(100% - 1px);
     margin-left: 20px;
   }
 }
